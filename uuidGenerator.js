@@ -7,17 +7,12 @@ function randomHexInc (low, high) {
 }
 
 let randomHexs=function(hexs,min,max){
-    let result = 0
-    for(let i =0;i<hexs;i++){
-        if(result == 0){
-            result=randomHexInc(min,max)
-        } else{
-            result=result+randomHexInc(min,max)
-        }        
+    let result=randomHexInc(min,max)
+    for(let i =1;i<hexs;i++){
+        result=result+randomHexInc(min,max)
     }
     return result
 }
-
 
 timeLow=randomHexs(8,0,15)               
 timeMid=randomHexs(4,0,15)               
